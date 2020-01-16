@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ZH">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Python代码运行助手</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!--<link rel="stylesheet/less" type="text/css" href="css/style.less"/>-->
+    <!--<script src="js/less.min.js"></script>-->
+</head>
+<body>
+<div class="header">
+    <div class="btngroup">
+        <button type="button" onclick="addrows()" class="btn">
+            <span class="fa fa-plus-square" aria-hidden="true"></span>添加块
+        </button>
+        <button type="button" onclick="all_execute_python(this)" class="btn ">
+            <span class="fa fa-play"></span>运行所有块
+        </button>
+    </div>
+</div>
+<div id="app">
+    <div id="code-0" class="box codes">
+        <div class="box-header" ondrop="drop(event,this)" ondragover="allowDrop(event)" draggable="true"
+             ondragstart="drag(event, this)">
+            <div class="text-info">
+                <span>#  code-0</span>
+                <span class="info-divider"></span>
+                <span>1 lines (20 len)</span>
+                <span class="info-divider"></span>
+                <span>20 Bytes</span>
+            </div>
+            <div class="function-group">
+                <!--                <div class="switch-container">-->
+                <!--                    <input id="switch-1" type="checkbox" checked="checked" class="switch"/>-->
+                <!--                    <label for="switch-1" title="关闭" onclick="codeswitch(this)"></label>-->
+                <!--                </div>-->
+                <div class="btngroup">
+                    <button class="btn btn-sm btngroup-item" href="javascript:void(0);" title="关闭"
+                            onclick="toggle(this)">
+                        <span class="toggle toggle-on"></span>
+                    </button>
+                    <a class="btn btn-sm btngroup-item" href="javascript:void(0);" title="运行"
+                       onclick="execute_python(this)">
+                        <span class="fa fa-play" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn btn-sm btngroup-item" href="javascript:void(0);" title="复制" onclick="copycode(this)">
+                        <span class="fa fa fa-copy" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn btn-sm btngroup-item" href="javascript:void(0);" title="保存" onclick="savecode(this)">
+                        <span class="fa fa-floppy-o" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn btn-sm btngroup-item" href="javascript:void(0);" title="向上合并" onclick="upmerge(this)">
+                        <span class="fa fa-long-arrow-up" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn btn-sm btngroup-item" href="javascript:void(0);" title="向下合并"
+                       onclick="downmerge(this)">
+                        <span class="fa fa-long-arrow-down" aria-hidden="true"></span>
+                    </a>
+                    <a class="btn btn-sm btngroup-item" href="javascript:void(0);" title="删除"
+                       onclick="delectcode(this)">
+                        <span class="fa fa-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <textarea onkeyup="AutoTextareaHeight(this)" class="run" rows="6">print('Hello Word!')</textarea>
+        </div>
+    </div>
+</div>
+<!--<script src="./js/jquery.js"></script>-->
+<script src="./js/app.js"></script>
+<script>
+    window.onload = function () {
+        // addrows();
+    }
+</script>
+</body>
+</html>
